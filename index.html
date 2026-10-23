@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course AI Agent</title>
+    <meta
+      name="description"
+      content="AI-powered course planner for exam prep and smart learning recommendations."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">A</div>
+          <div>
+            <p class="eyebrow">AI course matcher</p>
+            <h1>Course AI Agent</h1>
+          </div>
+        </div>
+      </header>
+
+      <main class="hero">
+        <section class="intro-panel">
+          <p class="eyebrow accent">Find your best-fit course</p>
+          <h2>Discover the right path for your exam goals.</h2>
+          <p class="lead">
+            Enter your target exam, budget, pace, and study style. Our AI agent ranks the best
+            courses to help you study smarter and stay on track.
+          </p>
+        </section>
+
+        <section class="planner-card" aria-labelledby="planner-title">
+          <div class="card-header">
+            <h3 id="planner-title">Course Recommendation Engine</h3>
+          </div>
+
+          <form id="course-form" class="course-form">
+            <div class="field-grid">
+              <label>
+                <span>Exam / Goal</span>
+                <select id="exam" name="exam">
+                  <option value="competitive">Competitive Exam</option>
+                  <option value="jee">JEE / Engineering</option>
+                  <option value="neet">NEET / Medical</option>
+                  <option value="upsc">UPSC / Government</option>
+                  <option value="ielts">IELTS / English</option>
+                  <option value="datascience">Data Science</option>
+                  <option value="software">Software Engineering</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Study budget</span>
+                <select id="budget" name="budget">
+                  <option value="low">Low (under ₹5k)</option>
+                  <option value="medium" selected>Medium (₹5k–₹15k)</option>
+                  <option value="high">High (₹15k+)</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Study pace</span>
+                <select id="pace" name="pace">
+                  <option value="slow">Self-paced</option>
+                  <option value="balanced" selected>Balanced</option>
+                  <option value="fast">Intensive / Fast-track</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Learning style</span>
+                <select id="style" name="style">
+                  <option value="video" selected>Video-first</option>
+                  <option value="notes">Notes + theory</option>
+                  <option value="mentor">Mentor-led</option>
+                  <option value="practice">Practice-heavy</option>
+                </select>
+              </label>
+            </div>
+
+            <button type="submit" class="primary-btn">Find my best courses</button>
+          </form>
+        </section>
+      </main>
+
+      <section class="results-panel" aria-live="polite">
+        <div class="results-header">
+          <div>
+            <p class="eyebrow accent">Recommendations</p>
+            <h3>Top course matches</h3>
+          </div>
+          <div class="score-pill" id="summary-pill">AI ready</div>
+        </div>
+
+        <div id="recommendations" class="recommendations"></div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
